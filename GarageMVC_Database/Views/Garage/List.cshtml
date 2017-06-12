@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GarageMVC.Models.Vehicle>
+﻿@model IEnumerable<GarageMVC_Database.Models.Vehicle>
 
 @{
     ViewBag.Title = "Search";
@@ -34,7 +34,7 @@
     <tr>
         <th>
             <form method="post">
-                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.RegNumber)" id="submit" />&#9660;
+                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.RegistrationNumber)" id="submit" />&#9660;
             </form>
         </th>
         <th>

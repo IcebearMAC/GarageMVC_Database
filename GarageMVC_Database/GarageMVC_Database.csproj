@@ -125,9 +125,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706120931407_Initial.cs" />
-    <Compile Include="Migrations\201706120931407_Initial.Designer.cs">
-      <DependentUpon>201706120931407_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706121235292_InitialCreate.cs" />
+    <Compile Include="Migrations\201706121235292_InitialCreate.Designer.cs">
+      <DependentUpon>201706121235292_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706121300414_Initial.cs" />
+    <Compile Include="Migrations\201706121300414_Initial.Designer.cs">
+      <DependentUpon>201706121300414_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Owner.cs" />
@@ -185,19 +189,22 @@
     <Content Include="Views\Garage\Delete.cshtml" />
     <Content Include="Views\Garage\List.cshtml" />
     <Content Include="Views\Garage\New_Vehicle.cshtml" />
+    <Content Include="Views\Garage\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706121235292_InitialCreate.resx">
+      <DependentUpon>201706121235292_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706121300414_Initial.resx">
+      <DependentUpon>201706121300414_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706120931407_Initial.resx">
-      <DependentUpon>201706120931407_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

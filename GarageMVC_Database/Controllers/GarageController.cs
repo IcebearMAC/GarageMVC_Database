@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
-using GarageMVC.Repository;
-using GarageMVC.Models;
+﻿using GarageMVC.Repository;
+using GarageMVC_Database.Models;
+using System.Web.Mvc;
 
 namespace GarageMVC.Controllers
 {
@@ -12,7 +12,7 @@ namespace GarageMVC.Controllers
         [HttpGet]
         public ActionResult List(string Search = "")
         {
-            return View(garage.Search(Search));
+            return View(garage.GetAll());
         }
 
         [HttpPost]
@@ -62,24 +62,27 @@ namespace GarageMVC.Controllers
         {
             return View();
         }
-
+        public ActionResult Index()
+        {
+            return View(garage.Search(""));
+        }
         // POST: Garage/Create
         [HttpPost]
-        public ActionResult List(Models.Vehicle vehicle, string vehicleType)
+        public ActionResult List(Vehicle vehicle, string vehicleType)
         {
             switch (vehicleType)
             {
                 case "Car":
-                    vehicle.Type = VehicleType.Car;
+                    vehicle.VehicleType.Category = Category.Car;
                     break;
                 case "MC":
-                    vehicle.Type = VehicleType.Mc;
+                    vehicle.VehicleType.Category = Category.MC;
                     break;
                 case "Bus":
-                    vehicle.Type = VehicleType.Bus;
+                    vehicle.VehicleType.Category = Category.Bus;
                     break;
                 case "Truck":
-                    vehicle.Type = VehicleType.Truck;
+                    vehicle.VehicleType.Category = Category.Truck;
                     break;
                 default:
                     return RedirectToAction("Index");
