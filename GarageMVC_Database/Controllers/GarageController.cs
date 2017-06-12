@@ -19,7 +19,7 @@ namespace GarageMVC.Controllers
         public ActionResult New_Vehicle(string Sort = "", string Filter = "")
         {
 
-            if (Filter == "Car" || Filter == "Bus" || Filter == "Truck" || Filter == "Mc")
+            if (Filter == "Car" || Filter == "Bus" || Filter == "Truck" || Filter == "Mc" || Filter == "Other")
             {
                 return View(garage.GetFilteredList(Filter));
             }

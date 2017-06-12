@@ -177,6 +177,7 @@ namespace GarageMVC.Repository
             if (vehicle.VehicleType.Category == Category.Car) { }
             else if (vehicle.VehicleType.Category == Category.Mc) { }
             else if (vehicle.VehicleType.Category == Category.Bus) { }
+            else if (vehicle.VehicleType.Category == Category.Truck) { }
             else { decimal temp = 3.50M; }
 
             return vehicle;
