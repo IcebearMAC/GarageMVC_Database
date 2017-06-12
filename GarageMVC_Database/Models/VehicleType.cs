@@ -20,6 +20,7 @@ namespace GarageMVC_Database.Models
         Car,
         MC,
         Bus,
-        Truck
+        Truck,
+        Horse_Buggy
     }
 }

@@ -13,7 +13,7 @@ namespace GarageMVC_Database.Models
         [Required]
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public String Position { get; set; }
+        public int ParkingPlace { get; set; }
         public virtual ICollection<Vehicle> Vehicles { get; set; }
     }
 }
