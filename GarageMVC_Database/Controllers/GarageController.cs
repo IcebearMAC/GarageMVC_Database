@@ -76,13 +76,16 @@ namespace GarageMVC.Controllers
                     vehicle.VehicleType.Category = Category.Car;
                     break;
                 case "MC":
-                    vehicle.VehicleType.Category = Category.MC;
+                    vehicle.VehicleType.Category = Category.Mc;
                     break;
                 case "Bus":
                     vehicle.VehicleType.Category = Category.Bus;
                     break;
                 case "Truck":
                     vehicle.VehicleType.Category = Category.Truck;
+                    break;
+                case "Other":
+                    vehicle.VehicleType.Category = Category.Other;
                     break;
                 default:
                     return RedirectToAction("Index");

@@ -21,5 +21,8 @@ namespace GarageMVC_Database.Models
         [ForeignKey("VehicleType")]
         public int VehicleTypeID { get; set; }
         public virtual VehicleType VehicleType { get; set; }
+        [ForeignKey("ParkingPrice")]
+        public int ParkingPriceID { get; set; }
+        public virtual ParkingPrice ParkingPrice { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using GarageMVC_Database.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+
 namespace GarageMVC.Repository
 {
     public class GarageRepository
@@ -85,12 +86,16 @@ namespace GarageMVC.Repository
             {
                 return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.Bus).ToList();
             }
-            else if (type == "Mc" || type=="MC")
+            else if (type == "Mc" || type == "MC")
             {
-                return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.MC).ToList();
+                return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.Mc).ToList();
+            }
+            else if (type == "Truck" || type == "Truck")
+            {
+                return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.Truck).ToList();
             }
             else
-                return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.Truck).ToList();
+                return db.Vehicles.Where(vehicle => vehicle.VehicleType.Category == Category.Other).ToList();
         }
         //GET Sorted Lists
         public List<Vehicle> SortParking(bool descend)
@@ -170,7 +175,7 @@ namespace GarageMVC.Repository
         {
             //reset the parkingPrice to it's default values
             if (vehicle.VehicleType.Category == Category.Car) { }
-            else if (vehicle.VehicleType.Category == Category.MC) { }
+            else if (vehicle.VehicleType.Category == Category.Mc) { }
             else if (vehicle.VehicleType.Category == Category.Bus) { }
             else { decimal temp = 3.50M; }
 
