@@ -16,4 +16,4 @@ namespace GarageMVC_Database.Models
         public virtual VehicleType VehicleType { get; set; }
     }
 
-}
+}   
