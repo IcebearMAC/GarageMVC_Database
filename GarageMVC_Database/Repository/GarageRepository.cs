@@ -22,9 +22,9 @@ namespace GarageMVC.Repository
             bool exists = false;
             if (vehicle != null)
             {
-                vehicle.RegistrationNumber = vehicle.RegistrationNumber.ToUpper();
+                vehicle.RegNumber = vehicle.RegNumber.ToUpper();
                 //If Vehicle Exists
-                if (db.Vehicles.Where(v=>v.RegistrationNumber==vehicle.RegistrationNumber).FirstOrDefault()!=null)
+                if (db.Vehicles.Where(v=>v.RegNumber==vehicle.RegNumber).FirstOrDefault()!=null)
                 {
                     exists = true;
                 }
@@ -34,12 +34,12 @@ namespace GarageMVC.Repository
                     bool Once = true;
                     int index = 1;
 
-                    foreach (var v in db.ParkingSpots.OrderBy(v => v.Position))
+                    foreach (var v in db.ParkingSpots.OrderBy(v => v.ParkingPlace))
                     {
                         //Set the parking place for the vehicle to the empty parking slot
-                        if (index != v.Position && Once == true)
+                        if (index != v.ParkingPlace && Once == true)
                         {
-                            vehicle.ParkingSpot.Position = index;
+                            vehicle.ParkingSpot.ParkingPlace = index;
                             Once = false;
                             break;
                         }
@@ -48,7 +48,7 @@ namespace GarageMVC.Repository
                     //If the Vehicle doesn't exist in the database, add it to the db
                     if (exists == false)
                     {
-                        if (vehicle.ParkingSpot.Position == 0) { vehicle.ParkingSpot.Position = index; }
+                        if (vehicle.ParkingSpot.ParkingPlace == 0) { vehicle.ParkingSpot.ParkingPlace = index; }
 
                         vehicle = SetDefaultPrice(vehicle);
 
@@ -68,7 +68,7 @@ namespace GarageMVC.Repository
         }
         public Vehicle GetVehicle(string regNr)
         {
-            return db.Vehicles.Where(v => v.RegistrationNumber == regNr).FirstOrDefault();
+            return db.Vehicles.Where(v => v.RegNumber == regNr).FirstOrDefault();
         }
         public Vehicle GetVehicle(int id)
         {
@@ -97,7 +97,7 @@ namespace GarageMVC.Repository
         {
             if (descend)
             {
-                return db.Vehicles.OrderByDescending(v => v.ParkingSpot.Position).ToList();
+                return db.Vehicles.OrderByDescending(v => v.ParkingSpot.ParkingPlace).ToList();
             }
             return db.Vehicles.OrderBy(v => v.ParkingSpot).ToList();
         }
@@ -121,9 +121,9 @@ namespace GarageMVC.Repository
         {
             if (descend)
             {
-                return db.Vehicles.OrderByDescending(v => v.RegistrationNumber).ToList();
+                return db.Vehicles.OrderByDescending(v => v.RegNumber).ToList();
             }
-            return db.Vehicles.OrderBy(v => v.RegistrationNumber).ToList();
+            return db.Vehicles.OrderBy(v => v.RegNumber).ToList();
         }
         public List<Vehicle> SortType(bool descend)
         {
@@ -222,9 +222,9 @@ namespace GarageMVC.Repository
             {
                 searchTerm = searchTerm.ToUpper();
                 
-                return db.Vehicles.Where(vehicle => db.Owners.Where(o => o.OwnerName.Contains(searchTerm)).FirstOrDefault() !=null || vehicle.RegistrationNumber == searchTerm).ToList();
+                return db.Vehicles.Where(vehicle => db.Owners.Where(o => o.OwnerName.Contains(searchTerm)).FirstOrDefault() !=null || vehicle.RegNumber == searchTerm).ToList();
             }
-            return db.Vehicles.Where(vehicle => vehicle.ParkingSpot.Position == pSlot).ToList();
+            return db.Vehicles.Where(vehicle => vehicle.ParkingSpot.ParkingPlace == pSlot).ToList();
         }
 
         //public IEnumerable<Vehicle> SortVehicle(string sortOrder)
