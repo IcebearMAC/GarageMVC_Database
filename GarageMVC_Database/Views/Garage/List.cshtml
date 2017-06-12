@@ -26,7 +26,7 @@
         </form>
     </div>
     <div class="right">
-        <input name="vehicleType_Long" type="submit" value="Revert" onclick="location.href='@Url.Action("Index", "Garage")'" />
+        <input name="vehicleType_Long" type="submit" value="Revert" onclick="location.href='@Url.Action("List", "Garage")'" />
     </div>
     <p></p>
 </div>
@@ -34,22 +34,22 @@
     <tr>
         <th>
             <form method="post">
-                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.RegistrationNumber)" id="submit" />&#9660;
+                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.RegNumber)" id="submit" />&#9660;
             </form>
         </th>
         <th>
             <form method="post">
-                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.Owner)" id="submit" />&#9660;
+                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.Owners)" id="submit" />&#9660;
             </form>
         </th>
         <th>
             <form method="post">
-                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.Type)" id="submit" />&#9660;
+                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.VehicleType)" id="submit" />&#9660;
             </form>
         </th>
         <th>
             <form method="post">
-                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.ParkingPlace)" id="submit" />&#9660;
+                <input type="submit" name="Sort" value="@Html.DisplayNameFor(model => model.ParkingSpot)" id="submit" />&#9660;
             </form>
         </th>
 
@@ -65,19 +65,19 @@
                 @Html.DisplayFor(modelItem => item.RegNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Owner)
+                @Html.DisplayFor(modelItem => item.Owners)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.VehicleType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ParkingPlace)
+                @Html.DisplayFor(modelItem => item.ParkingSpot)
             </td>
 
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |*@
                 @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "ActionLink" }) |
-                @Html.ActionLink("CheckOut", "Delete", new { id = item.ID }, new { @class = "ActionLink" })
+                @Html.ActionLink("CheckOut", "CheckOut", new { id = item.ID }, new { @class = "ActionLink" })
             </td>
         </tr>
     }

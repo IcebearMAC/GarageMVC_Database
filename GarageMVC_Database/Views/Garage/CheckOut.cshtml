@@ -1,4 +1,5 @@
-﻿@model GarageMVC.Models.Vehicle
+﻿
+@model GarageMVC_Database.Models.Vehicle
 
 <h3>Do you want to check out this vehicle?</h3>
 <div>
@@ -14,11 +15,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ParkingPlace)
+            @Html.DisplayNameFor(models => models.ParkingSpot)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ParkingPlace)
+            @Html.DisplayFor(model => model.ParkingSpot)
         </dd>
 
         <dt>
@@ -47,22 +48,22 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Owner)
+            @Html.DisplayNameFor(model => model.Owners)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Owner)
+            @Html.DisplayFor(model => model.Owners)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm("Delete", "Garage", FormMethod.Post))
+    @using (Html.BeginForm("CheckOut", "Garage", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         <div class="form-actions no-color">
             <input name="vehicleType_Long" type="submit" value="Payment" class="btn btn-warning" />
             @*@Html.ActionLink("Cancel", "Index", new { @class = "btn btn-default"})*@
-            <input name="vehicleType_Long" type="button" class="btn btn-warning" value="Cancel" onclick="location.href='@Url.Action("Index", "Garage")'" />
+            <input name="vehicleType_Long" type="button" class="btn btn-warning" value="Cancel" onclick="location.href='@Url.Action("List", "Garage")'" />
 
         </div>
         <div class="col-md-10">

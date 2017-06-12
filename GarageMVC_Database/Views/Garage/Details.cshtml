@@ -1,4 +1,5 @@
-﻿@model GarageMVC.Models.Vehicle
+﻿
+@model GarageMVC_Database.Models.Vehicle
 
 @{
     ViewBag.Title = "Details";
@@ -19,27 +20,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Owner)
+            @Html.DisplayNameFor(model => model.Owners)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Owner)
+            @Html.DisplayFor(model => model.Owners)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.VehicleType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Type)
+            @Html.DisplayFor(model => model.VehicleType)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ParkingPlace)
+            @Html.DisplayNameFor(model => model.ParkingSpot)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ParkingPlace)
+            @Html.DisplayFor(model => model.ParkingSpot)
         </dd>
 
         <dt>
@@ -52,11 +53,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ParkingDate)
+            @Html.DisplayNameFor(models => models.ParkingDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ParkingDate)
+            @Html.DisplayFor(models => models.ParkingDate)
         </dd>
 
     </dl>
@@ -64,5 +65,5 @@
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
     @*@Html.ActionLink("Back to List", "Index")*@
-    <input name="vehicleType_Long" type="button" class="btn btn-warning" value="Return" onclick="location.href='@Url.Action("Index", "Garage")'" />
+    <input name="vehicleType_Long" type="button" class="btn btn-warning" value="Return" onclick="location.href='@Url.Action("CheckIn", "Garage")'" />
 </p>
