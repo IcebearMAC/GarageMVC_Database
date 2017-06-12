@@ -110,9 +110,9 @@ namespace GarageMVC.Repository
         {
             if (descend)
             {
-                return db.Vehicles.OrderByDescending(v => v.Owners.FirstOrDefault().OwnerName).ToList();
+                return db.Vehicles.OrderByDescending(v => v.Owner.FirstOrDefault().OwnerName).ToList();
             }
-            return db.Vehicles.OrderBy(v => v.Owners.FirstOrDefault().OwnerName).ToList();
+            return db.Vehicles.OrderBy(v => v.Owner.FirstOrDefault().OwnerName).ToList();
         }
         public List<Vehicle> SortDate(bool descend)
         {
