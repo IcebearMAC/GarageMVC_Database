@@ -180,10 +180,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Garage\Details.cshtml" />
+    <Content Include="Views\Garage\Edit.cshtml" />
+    <Content Include="Views\Garage\Delete.cshtml" />
+    <Content Include="Views\Garage\List.cshtml" />
+    <Content Include="Views\Garage\New_Vehicle.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Garage\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
