@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace GarageMVC.Repository
+namespace GarageMVC_Database.Repository
 {
     public class GarageRepository
     {
@@ -106,14 +106,14 @@ namespace GarageMVC.Repository
             }
             return db.Vehicles.OrderBy(v => v.ParkingSpot).ToList();
         }
-        public List<Vehicle> SortOwner(bool descend)
-        {
-            if (descend)
-            {
-                return db.Vehicles.OrderByDescending(v => v.Owner.FirstOrDefault().OwnerName).ToList();
-            }
-            return db.Vehicles.OrderBy(v => v.Owner.FirstOrDefault().OwnerName).ToList();
-        }
+        //public List<Vehicle> SortOwner(bool descend)
+        //{
+        //    if (descend)
+        //    {
+        //        return db.Vehicles.OrderByDescending(v => v.Owner.FirstOrDefault().OwnerName).ToList();
+        //    }
+        //    return db.Vehicles.OrderBy(v => v.Owner.FirstOrDefault().OwnerName).ToList();
+        //}
         public List<Vehicle> SortDate(bool descend)
         {
             if (descend)

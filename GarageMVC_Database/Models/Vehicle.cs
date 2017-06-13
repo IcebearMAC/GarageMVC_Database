@@ -14,15 +14,14 @@ namespace GarageMVC_Database.Models
         [Required]
         [StringLength(6)]
         public string RegNumber { get; set; }
-        public virtual ICollection<Owner> Owner { get; set; }
         [ForeignKey("ParkingSpot")]
         public int ParkingSpotID { get; set; }
         public virtual ParkingSpot ParkingSpot { get; set; }
         [ForeignKey("VehicleType")]
         public int VehicleTypeID { get; set; }
         public virtual VehicleType VehicleType { get; set; }
-        [ForeignKey("ParkingPrice")]
-        public int ParkingPriceID { get; set; }
-        public virtual ParkingPrice ParkingPrice { get; set; }
+        [ForeignKey("Owner")]
+        public int OwnerID { get; set; }
+        public virtual Owner Owner { get; set; }
     }
 }

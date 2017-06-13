@@ -1,8 +1,9 @@
-﻿using GarageMVC.Repository;
+﻿
+using GarageMVC_Database.Repository;
 using GarageMVC_Database.Models;
 using System.Web.Mvc;
 
-namespace GarageMVC.Controllers
+namespace GarageMVC_Database.Controllers
 {
     public class GarageController : Controller
     {
@@ -16,7 +17,7 @@ namespace GarageMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult New_Vehicle(string Sort = "", string Filter = "")
+        public ActionResult List(string Sort = "", string Filter = "")
         {
 
             if (Filter == "Car" || Filter == "Bus" || Filter == "Truck" || Filter == "Mc" || Filter == "Other")
@@ -29,10 +30,10 @@ namespace GarageMVC.Controllers
             {
                 return View(garage.SortReg(false));
             }
-            else if (Sort == "owner")
-            {
-                return View(garage.SortOwner(false));
-            }
+            //else if (Sort == "owner")
+            //{
+            //    return View(garage.SortOwner(false));
+            //}
             else if (Sort == "type")
             {
                 return View(garage.SortType(false));
@@ -58,17 +59,19 @@ namespace GarageMVC.Controllers
         }
 
         // GET: Garage/Create
-        public ActionResult Create()
+        public ActionResult CheckIn()
         {
             return View();
         }
-        public ActionResult Index()
+
+        public ActionResult List()
         {
             return View(garage.Search(""));
         }
+
         // POST: Garage/Create
         [HttpPost]
-        public ActionResult List(Vehicle vehicle, string vehicleType)
+        public ActionResult CheckIn(Vehicle vehicle, string vehicleType)
         {
             switch (vehicleType)
             {
@@ -92,7 +95,6 @@ namespace GarageMVC.Controllers
             }
 
             garage.Add(vehicle);
-
             return RedirectToAction("Create");
         }
 
@@ -119,7 +121,7 @@ namespace GarageMVC.Controllers
         }
 
         // GET: Garage/Delete/5
-        public ActionResult Delete(int id = 0)
+        public ActionResult CheckOut(int id = 0)
         {
             if (id != 0)
             {
@@ -132,7 +134,7 @@ namespace GarageMVC.Controllers
 
         // POST: Garage/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, string value = "")
+        public ActionResult CheckOut(int id, string value = "")
         {
             garage.Remove(id);
 

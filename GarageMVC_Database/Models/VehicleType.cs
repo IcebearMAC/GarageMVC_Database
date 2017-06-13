@@ -13,6 +13,9 @@ namespace GarageMVC_Database.Models
         public int ID { get; set; }
         public Category Category { get; set; }
         public virtual ICollection<Vehicle> Vehicles { get; set; }
+        [ForeignKey("ParkingPrice")]
+        public int ParkingPriceID { get; set; }
+        public virtual ParkingPrice ParkingPrice { get; set; }
     }
 
     public enum Category

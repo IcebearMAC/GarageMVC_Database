@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +15,6 @@ namespace GarageMVC_Database.Models
         public string PersonalNumber { get; set; }
         [Required]
         public string OwnerName { get; set; }
-        public virtual ICollection<Vehicle> Vechicles { get; set; }
+        public virtual ICollection<Vehicle> Vechicle { get; set; }
     }
 }

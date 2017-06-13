@@ -120,14 +120,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GarageController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\VehicleContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706121809134_Initial.cs" />
-    <Compile Include="Migrations\201706121809134_Initial.Designer.cs">
-      <DependentUpon>201706121809134_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706130836251_Initial.cs" />
+    <Compile Include="Migrations\201706130836251_Initial.Designer.cs">
+      <DependentUpon>201706130836251_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Owner.cs" />
@@ -192,8 +191,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706121809134_Initial.resx">
-      <DependentUpon>201706121809134_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706130836251_Initial.resx">
+      <DependentUpon>201706130836251_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

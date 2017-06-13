@@ -10,8 +10,10 @@ namespace GarageMVC_Database.Models
     {
         public int ID { get; set; }
         public int ParkingPrices { get; set; }
-        public virtual ICollection<VehicleType> VehicleTypes { get; set; }
-        public virtual ICollection<Vehicle> Vehicles { get; set; }
+        //public virtual ICollection<Vehicle> Vehicles { get; set; }
+        //[ForeignKey("VehicleType")]
+        //public int VehicleTypeID { get; set; }
+        //public virtual VehicleType VehicleType { get; set; }
     }
 
 }   

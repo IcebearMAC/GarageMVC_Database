@@ -1,17 +1,21 @@
 ﻿
 @model GarageMVC_Database.Models.Vehicle
 
+@{
+    ViewBag.Title = "CheckOut";
+}
+
 <h3>Do you want to check out this vehicle?</h3>
 <div>
     @*<h4>Vehicle</h4>
         <hr />*@
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.StartTime)
+            @Html.DisplayNameFor(model => model.ParkingSpot.StartTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.StartTime)
+            @Html.DisplayFor(model => model.ParkingSpot.StartTime)
         </dd>
 
         <dt>
